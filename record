@@ -1,0 +1,5 @@
+#!/usr/bin/perl
+# keep this file also in ~/bin under the name record
+$sansname=$ARGV[0];
+print "recording $sansname.wav ...\n";
+system "arecord -c 1 -f s16_LE -r24000 $sansname.wav";

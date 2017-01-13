@@ -1,0 +1,1 @@
+shred -u /home/stefan/gpg/aws3.pem

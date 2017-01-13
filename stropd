@@ -1,0 +1,1 @@
+rsync -avz --delete --protocol=28 becker@ftp.streetgreek.com:stropbox/ /home/stefan/stropbox/

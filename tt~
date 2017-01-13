@@ -1,0 +1,48 @@
+#!/usr/bin/perl
+$akt=$ARGV[0];
+print "Specify a remote directory [transfer]: ";
+$rdir=<STDIN>;
+chomp($rdir);
+print "Specify a local directory [no answer: pwd; t: /home/stefan/transfer]: ";
+$rdir=<STDIN>;
+chomp($rdir);
+if ($ldir=="")
+{
+if ($rdir=="")
+{
+print "curl -o $akt http://ec2-35-160-211-119.us-west-2.compute.amazonaws.com/transfer/$akt\n";
+system "curl -o $akt http://ec2-35-160-211-119.us-west-2.compute.amazonaws.com/transfer/$akt";
+}
+else
+{
+print "curl -o $akt http://ec2-35-160-211-119.us-west-2.compute.amazonaws.com/$rdir/$akt\n";
+system "curl -o $akt http://ec2-35-160-211-119.us-west-2.compute.amazonaws.com/$rdir/$akt";
+}
+}
+elsif ($ldir=="t")
+{
+$ldir="/home/stefan/transfer";
+if ($rdir=="")
+{
+print "curl -o $ldir/$akt http://ec2-35-160-211-119.us-west-2.compute.amazonaws.com/transfer/$akt\n";
+system "curl -o $ldir/$akt http://ec2-35-160-211-119.us-west-2.compute.amazonaws.com/transfer/$akt";
+}
+else
+{
+print "curl -o $ldir/$akt http://ec2-35-160-211-119.us-west-2.compute.amazonaws.com/$rdir/$akt\n";
+system "curl -o $ldir/$akt http://ec2-35-160-211-119.us-west-2.compute.amazonaws.com/$rdir/$akt";
+}
+}
+else
+{
+if ($rdir=="")
+{
+print "curl -o $ldir/$akt http://ec2-35-160-211-119.us-west-2.compute.amazonaws.com/transfer/$akt\n";
+system "curl -o $ldir/$akt http://ec2-35-160-211-119.us-west-2.compute.amazonaws.com/transfer/$akt";
+}
+else
+{
+print "curl -o $ldir/$akt http://ec2-35-160-211-119.us-west-2.compute.amazonaws.com/$rdir/$akt\n";
+system "curl -o $ldir/$akt http://ec2-35-160-211-119.us-west-2.compute.amazonaws.com/$rdir/$akt";
+}
+}

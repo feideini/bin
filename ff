@@ -1,0 +1,2 @@
+xmodmap /home/stefan/.Xmodmap
+ssh -i /home/stefan/gpg/aws3.pem ubuntu@35.160.211.119
